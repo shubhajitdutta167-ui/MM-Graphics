@@ -1,0 +1,325 @@
+<!-- Home Section -->
+<section id="home" class="hidden">
+
+    <!-- ============ HERO ============ -->
+    <div class="relative overflow-hidden bg-white">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/3"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50 rounded-full translate-y-1/2 -translate-x-1/3"></div>
+        </div>
+
+        <div class="relative container mx-auto px-4 py-20 md:py-28">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <!-- Left: copy -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 hero-badge">
+                        <i class="fas fa-bolt"></i> Trusted by 50+ Coaching Centers
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Handwriting to <span class="text-blue-600">Perfect PDFs</span> — Overnight.
+                    </h1>
+                    <p class="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+                        Stop wasting hours typing question papers and notes. We convert your handwritten pages into professionally formatted digital documents — fast, accurate, and affordable.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8">
+                        <a href="#register" class="btn btn-primary text-base px-8 py-3.5 shadow-lg shadow-blue-200">
+                            Get Started Free <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#services" onclick="window.location.hash='services'" class="btn btn-ghost text-base px-8 py-3.5 border border-gray-200">
+                            <i class="fas fa-play-circle"></i> View Services
+                        </a>
+                    </div>
+                    <!-- Trust indicators -->
+                    <div class="flex items-center gap-6 justify-center lg:justify-start text-sm text-gray-400">
+                        <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-green-500"></i> No hidden fees</span>
+                        <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-green-500"></i> 99% accuracy</span>
+                        <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-green-500"></i> 24hr delivery</span>
+                    </div>
+                </div>
+
+                <!-- Right: visual -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Main card -->
+                        <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 relative z-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                <span class="text-xs text-gray-400 ml-2">invoice_preview.pdf</span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="h-4 bg-blue-100 rounded-full w-3/4"></div>
+                                <div class="h-3 bg-gray-100 rounded-full w-full"></div>
+                                <div class="h-3 bg-gray-100 rounded-full w-5/6"></div>
+                                <div class="h-3 bg-gray-100 rounded-full w-2/3"></div>
+                                <div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+                                    <div class="h-3 bg-gray-100 rounded-full w-24"></div>
+                                    <div class="h-5 bg-blue-600 rounded-lg w-20"></div>
+                                </div>
+                            </div>
+                            <div class="mt-5 grid grid-cols-3 gap-3">
+                                <div class="bg-blue-50 rounded-xl p-3 text-center">
+                                    <p class="text-lg font-bold text-blue-600">250</p>
+                                    <p class="text-[10px] text-gray-500">Pages typed</p>
+                                </div>
+                                <div class="bg-green-50 rounded-xl p-3 text-center">
+                                    <p class="text-lg font-bold text-green-600">₹2,500</p>
+                                    <p class="text-[10px] text-gray-500">Total bill</p>
+                                </div>
+                                <div class="bg-purple-50 rounded-xl p-3 text-center">
+                                    <p class="text-lg font-bold text-purple-600">12hr</p>
+                                    <p class="text-[10px] text-gray-500">Delivered in</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating badges -->
+                        <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-lg border border-gray-100 p-3 flex items-center gap-2 z-20 float-badge">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-gray-900">Document Ready</p>
+                                <p class="text-[10px] text-gray-400">Just now</p>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-3 -left-4 bg-white rounded-2xl shadow-lg border border-gray-100 px-4 py-3 flex items-center gap-3 z-20 float-badge-delay">
+                            <div class="flex -space-x-2">
+                                <div class="w-7 h-7 rounded-full bg-blue-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-blue-700">S</div>
+                                <div class="w-7 h-7 rounded-full bg-green-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-green-700">B</div>
+                                <div class="w-7 h-7 rounded-full bg-purple-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-purple-700">G</div>
+                            </div>
+                            <p class="text-xs text-gray-600"><span class="font-bold">50+</span> happy clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ STATS BAR ============ -->
+    <div class="bg-blue-600 py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div>
+                    <p class="text-3xl md:text-4xl font-extrabold counter" data-target="500">500+</p>
+                    <p class="text-blue-200 text-sm mt-1">Projects Completed</p>
+                </div>
+                <div>
+                    <p class="text-3xl md:text-4xl font-extrabold">50+</p>
+                    <p class="text-blue-200 text-sm mt-1">Coaching Centers</p>
+                </div>
+                <div>
+                    <p class="text-3xl md:text-4xl font-extrabold">10K+</p>
+                    <p class="text-blue-200 text-sm mt-1">Pages Typed</p>
+                </div>
+                <div>
+                    <p class="text-3xl md:text-4xl font-extrabold">99%</p>
+                    <p class="text-blue-200 text-sm mt-1">Accuracy Rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ SERVICES PREVIEW ============ -->
+    <div class="container mx-auto px-4 py-20">
+        <div class="text-center mb-14">
+            <span class="inline-block bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Our Services</span>
+            <h3 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900">Everything You Need, Digitized</h3>
+            <p class="text-gray-500 max-w-xl mx-auto">From handwritten notes to exam papers — we handle every document type with precision.</p>
+        </div>
+        <div id="demo-list" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        <div class="text-center mt-10">
+            <a href="#services" onclick="window.location.hash='services'" class="text-blue-600 font-semibold text-sm hover:underline inline-flex items-center gap-1">
+                View all services <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <div class="bg-gray-50 border-t border-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-14">
+                <span class="inline-block bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Simple Process</span>
+                <h3 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900">How It Works</h3>
+                <p class="text-gray-500 max-w-xl mx-auto">Three simple steps to get your documents digitized.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-5 group-hover:scale-110 transition-transform shadow-lg shadow-blue-200">1</div>
+                    <h4 class="font-bold text-gray-900 mb-2 text-lg">Send Your Pages</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">WhatsApp us your handwritten notes, drafts, or source pages. Photos or scans both work.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-5 group-hover:scale-110 transition-transform shadow-lg shadow-blue-200">2</div>
+                    <h4 class="font-bold text-gray-900 mb-2 text-lg">We Type & Format</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Our team types every word accurately with proper headings, numbering, and formatting.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-5 group-hover:scale-110 transition-transform shadow-lg shadow-blue-200">3</div>
+                    <h4 class="font-bold text-gray-900 mb-2 text-lg">Get Your PDF</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Receive a polished, print-ready PDF with your bill. Review, download, and print anytime.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ WHY CHOOSE US ============ -->
+    <div class="container mx-auto px-4 py-20">
+        <div class="text-center mb-14">
+            <span class="inline-block bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Why Us</span>
+            <h3 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900">Why Coaching Centers Choose Us</h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center text-xl mb-4"><i class="fas fa-bolt"></i></div>
+                <h4 class="font-bold text-gray-900 mb-1">Lightning Fast</h4>
+                <p class="text-gray-500 text-sm">Most documents delivered within 12-24 hours. Rush orders available.</p>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center text-xl mb-4"><i class="fas fa-bullseye"></i></div>
+                <h4 class="font-bold text-gray-900 mb-1">99% Accurate</h4>
+                <p class="text-gray-500 text-sm">Double-checked by our team. Free corrections if we make any errors.</p>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4"><i class="fas fa-rupee-sign"></i></div>
+                <h4 class="font-bold text-gray-900 mb-1">Best Prices</h4>
+                <p class="text-gray-500 text-sm">Starting at just ₹5/page. Transparent billing with no hidden charges.</p>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-4"><i class="fas fa-file-invoice"></i></div>
+                <h4 class="font-bold text-gray-900 mb-1">Digital Billing</h4>
+                <p class="text-gray-500 text-sm">Auto-generated invoices and PDF bills. Track every order from your dashboard.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <div class="bg-gray-50 border-t border-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-14">
+                <span class="inline-block bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Testimonials</span>
+                <h3 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900">Loved by Coaching Centers</h3>
+                <p class="text-gray-500">Hear from institutions that trust us with their documents.</p>
+            </div>
+            <div id="slider" class="relative max-w-2xl mx-auto min-h-[200px]">
+                <div class="slide absolute w-full transition-opacity duration-500">
+                    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 text-center">
+                        <div class="flex justify-center mb-3">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">"MM Graphics turned our handwritten notes into perfect documents overnight. We used to spend 3 days on what they deliver in hours. Incredible service!"</p>
+                        <div class="flex items-center justify-center gap-3">
+                            <div class="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm">SA</div>
+                            <div class="text-left">
+                                <span class="font-semibold text-gray-900 block text-sm">The Scholars Academy</span>
+                                <span class="text-xs text-gray-400">Coaching Center</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide absolute w-full transition-opacity duration-500 hidden">
+                    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 text-center">
+                        <div class="flex justify-center mb-3">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">"The accuracy and speed are unmatched. We saved dozens of hours on document preparation. The billing dashboard makes tracking so easy."</p>
+                        <div class="flex items-center justify-center gap-3">
+                            <div class="w-11 h-11 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-sm">BF</div>
+                            <div class="text-left">
+                                <span class="font-semibold text-gray-900 block text-sm">Bright Future Coaching</span>
+                                <span class="text-xs text-gray-400">Educational Institute</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide absolute w-full transition-opacity duration-500 hidden">
+                    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 text-center">
+                        <div class="flex justify-center mb-3">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">"Creating question papers is now a breeze. The formatting is always on point and they understand our exact requirements. Highly recommend!"</p>
+                        <div class="flex items-center justify-center gap-3">
+                            <div class="w-11 h-11 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-sm">GI</div>
+                            <div class="text-left">
+                                <span class="font-semibold text-gray-900 block text-sm">Gurukul Institute</span>
+                                <span class="text-xs text-gray-400">Coaching Center</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="slider-dots" class="flex justify-center gap-2 mt-8"></div>
+        </div>
+    </div>
+
+    <!-- ============ CTA ============ -->
+    <div class="container mx-auto px-4 py-20">
+        <div class="bg-blue-600 rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+            <!-- Decorative circles -->
+            <div class="absolute top-0 right-0 w-40 h-40 bg-blue-500 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+            <div class="absolute bottom-0 left-0 w-32 h-32 bg-blue-500 rounded-full translate-y-1/2 -translate-x-1/2 opacity-50"></div>
+            <div class="relative z-10">
+                <h3 class="text-3xl md:text-4xl font-extrabold mb-4">Ready to Save Hours Every Week?</h3>
+                <p class="text-blue-100 max-w-xl mx-auto mb-8 text-lg">Join 50+ coaching centers who trust MM Graphics with their document work. Get your first order delivered in 24 hours.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a href="#register" class="btn text-base px-8 py-3.5 bg-white text-blue-600 font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                        Create Free Account <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="https://wa.me/917699738819" target="_blank" rel="noopener" class="btn text-base px-8 py-3.5 border-2 border-white/30 text-white font-bold hover:bg-white/10 transition-all">
+                        <i class="fab fa-whatsapp text-lg"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ CONTACT STRIP ============ -->
+    <div class="border-t border-gray-100 py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-center">
+                <a href="mailto:mmgraphics.nab@gmail.com" class="flex items-center gap-3 text-gray-600 hover:text-blue-600 transition-colors group">
+                    <div class="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                        <i class="fas fa-envelope text-blue-600"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-gray-400">Email us</p>
+                        <p class="font-semibold text-sm">mmgraphics.nab@gmail.com</p>
+                    </div>
+                </a>
+                <a href="tel:+917699738819" class="flex items-center gap-3 text-gray-600 hover:text-blue-600 transition-colors group">
+                    <div class="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                        <i class="fas fa-phone text-blue-600"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-gray-400">Call us</p>
+                        <p class="font-semibold text-sm">+91 7699738819</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/917699738819" target="_blank" rel="noopener" class="flex items-center gap-3 text-gray-600 hover:text-green-600 transition-colors group">
+                    <div class="w-11 h-11 bg-green-50 rounded-xl flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                        <i class="fab fa-whatsapp text-green-600 text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-gray-400">WhatsApp</p>
+                        <p class="font-semibold text-sm">Chat with us</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>

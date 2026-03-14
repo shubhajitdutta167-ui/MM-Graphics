@@ -1,0 +1,37 @@
+<!-- Header / Navbar -->
+<header class="bg-white text-gray-800 shadow-sm border-b border-gray-100 px-4 py-3 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-2xl font-extrabold text-blue-600 cursor-pointer tracking-tight" onclick="window.location.hash = ''">
+        <i class="fas fa-pen-nib mr-1 text-blue-500"></i>MM Graphics
+    </h1>
+    <nav id="main-nav" class="hidden md:flex items-center space-x-1">
+        <button onclick="window.location.hash = ''" data-nav="home" class="nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">Home</button>
+        <button onclick="window.location.hash = 'services'" data-nav="services" class="nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">Services</button>
+        <button onclick="window.location.hash = 'about'" data-nav="about" class="nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">About</button>
+        <button id="nav-login" onclick="window.location.hash = 'login'" data-nav="login" class="nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">Login</button>
+        <button id="nav-register" onclick="window.location.hash = 'register'" class="btn btn-primary text-sm ml-2">Sign Up</button>
+        <button id="nav-dashboard" onclick="goToDashboard()" data-nav="dashboard" class="hidden nav-link px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">Dashboard</button>
+        <button id="nav-logout" onclick="logout()" class="hidden btn btn-danger text-sm ml-2">Logout</button>
+    </nav>
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-xl text-gray-600 hover:text-gray-800 p-2">
+        <i class="fas fa-bars"></i>
+    </button>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu-panel">
+        <div class="flex justify-between items-center mb-4">
+            <span class="text-lg font-bold text-blue-600">Menu</span>
+            <button onclick="toggleMobileMenu()" class="text-gray-400 hover:text-gray-600 text-xl"><i class="fas fa-times"></i></button>
+        </div>
+        <button onclick="window.location.hash = ''; toggleMobileMenu()" class="text-left px-4 py-3 rounded-lg hover:bg-gray-100 font-medium">Home</button>
+        <button onclick="window.location.hash = 'services'; toggleMobileMenu()" class="text-left px-4 py-3 rounded-lg hover:bg-gray-100 font-medium">Services</button>
+        <button onclick="window.location.hash = 'about'; toggleMobileMenu()" class="text-left px-4 py-3 rounded-lg hover:bg-gray-100 font-medium">About</button>
+        <button id="mobile-login" onclick="window.location.hash = 'login'; toggleMobileMenu()" class="text-left px-4 py-3 rounded-lg hover:bg-gray-100 font-medium">Login</button>
+        <button id="mobile-register" onclick="window.location.hash = 'register'; toggleMobileMenu()" class="text-left px-4 py-3 rounded-lg hover:bg-gray-100 font-medium text-blue-600">Sign Up</button>
+        <button id="mobile-dashboard" onclick="goToDashboard(); toggleMobileMenu()" class="hidden text-left px-4 py-3 rounded-lg hover:bg-gray-100 font-medium">Dashboard</button>
+        <button id="mobile-logout" onclick="logout(); toggleMobileMenu()" class="hidden text-left px-4 py-3 rounded-lg hover:bg-red-50 font-medium text-red-600 mt-2">Logout</button>
+    </div>
+</div>
