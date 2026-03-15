@@ -7,6 +7,8 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ['admin', 'customer'], default: 'customer' },
   coachingName: { type: String },
   phone: { type: String },
+  driveLink: { type: String, default: '' },
+  driveShowLink: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now }
 });
 

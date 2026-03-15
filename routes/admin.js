@@ -30,6 +30,22 @@ router.get('/customers', isAdmin, async (req, res) => {
   }
 });
 
+// Update customer drive link and visibility flag
+router.patch('/customer/:id/drive-link', isAdmin, async (req, res) => {
+  try {
+    const { driveLink, driveShowLink } = req.body;
+    const user = await User.findByIdAndUpdate(
+      req.params.id,
+      { driveLink, driveShowLink },
+      { new: true, select: '-password' }
+    );
+    if (!user) return res.status(404).json({ error: 'Customer not found' });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Create a new bill
 router.post('/bill', isAdmin, async (req, res) => {
   try {

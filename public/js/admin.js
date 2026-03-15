@@ -33,6 +33,37 @@ async function loadAdminDashboard() {
             });
         }
 
+        // Populate drive links table
+        const driveBody = document.getElementById('admin-drive-links-list');
+        const driveEmpty = document.getElementById('admin-drive-links-empty');
+        if (driveBody) {
+            driveBody.innerHTML = '';
+            if (customers.data.length === 0) {
+                if (driveEmpty) driveEmpty.classList.remove('hidden');
+            } else {
+                if (driveEmpty) driveEmpty.classList.add('hidden');
+                customers.data.forEach(c => {
+                    driveBody.innerHTML += `
+                        <tr class="border-b border-gray-50">
+                            <td class="p-3 font-medium text-gray-900">${c.coachingName}<br><span class="text-xs text-gray-400">${c.name}</span></td>
+                            <td class="p-3">
+                                <input type="url" id="drive-link-${c._id}" value="${c.driveLink || ''}" placeholder="https://drive.google.com/..." class="form-input text-sm w-full">
+                            </td>
+                            <td class="p-3">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="checkbox" id="drive-show-${c._id}" ${c.driveShowLink ? 'checked' : ''} class="w-4 h-4 accent-blue-600">
+                                    <span class="text-sm text-gray-600">Visible</span>
+                                </label>
+                            </td>
+                            <td class="p-3">
+                                <button onclick="saveDriveLink('${c._id}')" class="btn btn-primary text-sm py-1 px-3">Save</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }
+        }
+
         resetBillForm();
 
         const tbody = document.getElementById('admin-bills-list');
@@ -190,4 +221,19 @@ function resetBillForm() {
 
 function downloadBillPdf(billId) {
     triggerPdfDownload(`${API_BASE}/admin/bill/${billId}/pdf`, billId);
+}
+
+async function saveDriveLink(customerId) {
+    const token = localStorage.getItem('token');
+    const driveLink = document.getElementById(`drive-link-${customerId}`).value.trim();
+    const driveShowLink = document.getElementById(`drive-show-${customerId}`).checked;
+    try {
+        await axios.patch(`${API_BASE}/admin/customer/${customerId}/drive-link`,
+            { driveLink, driveShowLink },
+            { headers: { Authorization: token } }
+        );
+        showToast('Drive link saved!', 'success');
+    } catch (err) {
+        showToast('Failed to save: ' + (err.response?.data?.error || err.message), 'error');
+    }
 }

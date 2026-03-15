@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const PDFDocument = require('pdfkit');
 const Bill = require('../models/Bill');
+const User = require('../models/User');
 const Demo = require('../models/Demo');
 const jwt = require('jsonwebtoken');
 
@@ -19,6 +20,17 @@ const isCustomer = (req, res, next) => {
     res.status(400).send('Invalid token.');
   }
 };
+
+// Get my profile (includes driveLink and driveShowLink)
+router.get('/profile', isCustomer, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    if (!user) return res.status(404).json({ error: 'User not found' });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 // Get my billing history
 router.get('/my-bills', isCustomer, async (req, res) => {

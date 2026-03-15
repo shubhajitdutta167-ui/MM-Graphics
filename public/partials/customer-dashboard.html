@@ -1,8 +1,14 @@
 <!-- Customer Dashboard Section -->
 <section id="customer-dashboard" class="hidden container mx-auto px-4 py-10">
-    <div class="mb-8">
-        <h2 class="text-3xl font-bold text-gray-900">My Bills</h2>
-        <p id="welcome-msg" class="text-gray-500 text-sm mt-1">Welcome back!</p>
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+            <h2 class="text-3xl font-bold text-gray-900">My Bills</h2>
+            <p id="welcome-msg" class="text-gray-500 text-sm mt-1">Welcome back!</p>
+        </div>
+        <a id="drive-link-btn" href="#" target="_blank" rel="noopener noreferrer"
+           class="hidden items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors shadow-sm">
+            <i class="fas fa-folder-open"></i> Access Drive
+        </a>
     </div>
     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
         <div class="overflow-x-auto">

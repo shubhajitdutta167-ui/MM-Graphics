@@ -4,6 +4,19 @@ async function loadCustomerDashboard() {
     const welcomeMsg = document.getElementById('welcome-msg');
     if (welcomeMsg) welcomeMsg.innerText = `Welcome, ${localStorage.getItem('coachingName') || localStorage.getItem('name')}`;
     const token = localStorage.getItem('token');
+
+    // Load profile to check drive link visibility
+    try {
+        const profile = await axios.get(`${API_BASE}/customer/profile`, { headers: { Authorization: token } });
+        const driveBtn = document.getElementById('drive-link-btn');
+        if (driveBtn && profile.data.driveShowLink && profile.data.driveLink) {
+            driveBtn.href = profile.data.driveLink;
+            driveBtn.classList.remove('hidden');
+            driveBtn.classList.add('inline-flex');
+        }
+    } catch (err) {
+        console.error('Failed to load profile', err);
+    }
     try {
         const res = await axios.get(`${API_BASE}/customer/my-bills`, { headers: { Authorization: token } });
         const tbody = document.getElementById('customer-bills-list');
