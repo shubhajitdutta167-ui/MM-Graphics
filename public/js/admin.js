@@ -33,7 +33,7 @@ async function loadAdminDashboard() {
             });
         }
 
-        // Populate drive links table
+        // Populate drive links cards
         const driveBody = document.getElementById('admin-drive-links-list');
         const driveEmpty = document.getElementById('admin-drive-links-empty');
         if (driveBody) {
@@ -43,23 +43,37 @@ async function loadAdminDashboard() {
             } else {
                 if (driveEmpty) driveEmpty.classList.add('hidden');
                 customers.data.forEach(c => {
-                    driveBody.innerHTML += `
-                        <tr class="border-b border-gray-50">
-                            <td class="p-3 font-medium text-gray-900">${c.coachingName}<br><span class="text-xs text-gray-400">${c.name}</span></td>
-                            <td class="p-3">
-                                <input type="url" id="drive-link-${c._id}" value="${c.driveLink || ''}" placeholder="https://drive.google.com/..." class="form-input text-sm w-full">
-                            </td>
-                            <td class="p-3">
-                                <label class="flex items-center gap-2 cursor-pointer">
-                                    <input type="checkbox" id="drive-show-${c._id}" ${c.driveShowLink ? 'checked' : ''} class="w-4 h-4 accent-blue-600">
-                                    <span class="text-sm text-gray-600">Visible</span>
-                                </label>
-                            </td>
-                            <td class="p-3">
-                                <button onclick="saveDriveLink('${c._id}')" class="btn btn-primary text-sm py-1 px-3">Save</button>
-                            </td>
-                        </tr>
+                    const card = document.createElement('div');
+                    card.className = 'border border-gray-100 rounded-xl p-4 flex flex-col gap-3 bg-gray-50';
+                    card.innerHTML = `
+                        <div class="flex items-center justify-between gap-2">
+                            <div class="min-w-0">
+                                <p class="font-semibold text-gray-900 truncate">${c.coachingName}</p>
+                                <p class="text-xs text-gray-400 truncate">${c.name}</p>
+                            </div>
+                            <span id="drive-status-${c._id}" class="text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0 ${c.driveShowLink ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-500'}">
+                                ${c.driveShowLink ? 'Visible' : 'Hidden'}
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="url" id="drive-link-${c._id}"
+                                value="${c.driveLink || ''}"
+                                placeholder="Paste Drive link…"
+                                class="form-input text-sm flex-1"
+                                onblur="saveDriveLink('${c._id}')"
+                                onkeydown="if(event.key==='Enter'){this.blur();}">
+                            ${c.driveLink ? `<a href="${c.driveLink}" target="_blank" rel="noopener" class="text-blue-500 hover:text-blue-700 flex-shrink-0" title="Open link"><i class="fas fa-external-link-alt"></i></a>` : `<span id="drive-open-${c._id}" class="hidden text-blue-500 flex-shrink-0"><a href="#" target="_blank" rel="noopener" title="Open link"><i class="fas fa-external-link-alt"></i></a></span>`}
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Show to customer</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="drive-show-${c._id}" ${c.driveShowLink ? 'checked' : ''}
+                                    onchange="saveDriveLink('${c._id}')">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
                     `;
+                    driveBody.appendChild(card);
                 });
             }
         }
@@ -232,7 +246,12 @@ async function saveDriveLink(customerId) {
             { driveLink, driveShowLink },
             { headers: { Authorization: token } }
         );
-        showToast('Drive link saved!', 'success');
+        const pill = document.getElementById(`drive-status-${customerId}`);
+        if (pill) {
+            pill.textContent = driveShowLink ? 'Visible' : 'Hidden';
+            pill.className = `text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0 ${driveShowLink ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-500'}`;
+        }
+        showToast('Saved!', 'success');
     } catch (err) {
         showToast('Failed to save: ' + (err.response?.data?.error || err.message), 'error');
     }
