@@ -61,9 +61,15 @@ router.get('/bill/:id/pdf', isAdmin, async (req, res) => {
     const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     const doc = new PDFDocument({ size: 'A4', margin: 50 });
 
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename=bill-${bill._id}.pdf`);
-    doc.pipe(res);
+    const chunks = [];
+    doc.on('data', chunk => chunks.push(chunk));
+    doc.on('end', () => {
+      const pdfBuffer = Buffer.concat(chunks);
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename=bill-${bill._id}.pdf`);
+      res.setHeader('Content-Length', pdfBuffer.length);
+      res.end(pdfBuffer);
+    });
 
     // Header
     doc.fontSize(24).font('Helvetica-Bold').text('MM Graphics', { align: 'center' });
