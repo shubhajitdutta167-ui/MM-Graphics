@@ -112,8 +112,8 @@ router.get('/bill/:id/pdf', isAdmin, async (req, res) => {
         doc.text(`${i + 1}`, col.num, y, { width: 25 });
         doc.text(item.description, col.desc, y, { width: 210 });
         doc.text(`${item.pages}`, col.pages, y, { width: 70 });
-        doc.text(`₹${item.pricePerPage}`, col.price, y, { width: 80 });
-        doc.text(`₹${item.amount}`, col.amount, y, { width: 75, align: 'right' });
+        doc.text(`Rs.${Math.round(item.pricePerPage)}`, col.price, y, { width: 80 });
+        doc.text(`Rs.${Math.round(item.amount)}`, col.amount, y, { width: 75, align: 'right' });
         y += 22;
       });
 
@@ -123,7 +123,7 @@ router.get('/bill/:id/pdf', isAdmin, async (req, res) => {
       doc.moveTo(50, y).lineTo(545, y).stroke('#3b82f6');
       y += 10;
       doc.font('Helvetica-Bold').fontSize(12);
-      doc.text(`Grand Total: ₹${bill.totalAmount}`, col.amount - 100, y, { width: 175, align: 'right' });
+      doc.text(`Grand Total: Rs.${Math.round(bill.totalAmount)}`, col.amount - 100, y, { width: 175, align: 'right' });
 
       // Footer
       doc.moveDown(4);
