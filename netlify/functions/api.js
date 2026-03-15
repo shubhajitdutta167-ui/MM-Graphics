@@ -27,7 +27,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/customer', customerRoutes);
 
-const handler = serverless(app);
+const handler = serverless(app, {
+  binary: ['application/pdf']
+});
 
 module.exports.handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false;
